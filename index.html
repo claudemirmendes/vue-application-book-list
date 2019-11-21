@@ -8,29 +8,14 @@
     </head>
     <body>
         <div id="app" class="container">
-            <h2>{{cabecalho}}</h2>
-            <input v-model="novoLivro" @keyup.enter="addLivro" placeholder="Adicionar um novo livro" type="text" class="form-control">
-            <input v-model="novoAutor" @keyup.enter="addLivro" placeholder="Adicionar um novo autor" type="text" class="form-control"> <br>
-            <span class="input-group-btn">
-               <button @click="addLivro" class="js-add btn btn-primary btn-block">
-                 Adicionar   
-              </button>
-            </span>
-              <ul>
-                <li v-for="livro in livros" v-bind:class="{'removido': livro.checked}">
-                  <div class="checkobox">
-                    <label>
-                      <input class="js-livro" name="list" type="checkbox" v-model="livro.checked"> 
-                      <big>{{livro.titulo}}</big> - <small>{{livro.autor}}</small>
-                    </label>  
-                  </div>
-                </li>
-              </ul>
-            <div>
-              </hr>
-              <em>Moidifique o titulo da lista</em>
-              <input v-model="cabecalho"/>
-            </div>
+           <h2>{{cabecalho}}</h2>
+           <add-item-comp></add-item-comp>
+           <items-comp></items-comp>
+           <div class="footer">
+             </hr>
+             <em>Mude o titulo</em>
+             <altera-titulo-comp></altera-titulo-comp>
+           </div>
         </div>
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.js"></script>
